@@ -4,6 +4,9 @@
  ! Bugfix
  * Notice
 
+== 3.2.4 ==
+ ! Made only left clicks trigger the Lightbox.
+
 == 3.2.3 ==
  ! Swapped back to scraping Gelbooru because fuck
  * Swapped to using global listener rather than per event. Should be transparent to the user.

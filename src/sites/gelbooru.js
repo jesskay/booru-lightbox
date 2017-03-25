@@ -8,7 +8,7 @@ Booru.sites.gelbooru = {
 
 	init() {
     document.addEventListener("click", e => {
-      if(e.ctrlKey || e.shiftKey) return true;
+      if(e.ctrlKey || e.shiftKey || e.button != 0) return true;
       if(e.target.matches(".thumb:not(.blacklisted-image) > a > img")) {
         let el = e.target.parentNode;
         Booru.showLightbox(el.getAttribute("id").replace(/\D/, ""));

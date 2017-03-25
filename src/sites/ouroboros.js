@@ -7,7 +7,7 @@ Booru.sites.ouroboros = {
 
 	init() {
     document.addEventListener("click", e => {
-      if(e.ctrlKey || e.shiftKey) return true;
+      if(e.ctrlKey || e.shiftKey || e.button != 0) return true;
       if(e.target.matches(".thumb:not(.blacklisted) > a > img")) {
         let el = e.target.parentNode.parentNode;
         Booru.showLightbox(el.getAttribute("id").replace(/\D/, ""));
