@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Local dev stuff
+old
+webpack
+build
