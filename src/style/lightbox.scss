@@ -1,0 +1,32 @@
+#lightbox_shade {
+  &.show { opacity: 1; }
+  &.front { z-index: 314159; }
+
+  background: rgba(0, 0, 0, 0.9) no-repeat center fixed;
+  opacity: 0;
+  z-index: -9999;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: opacity 0.3s;
+
+  #lightbox_content {
+    &.show { opacity: 1; }
+
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 30px #000;
+    transition: opacity 0.3s, width 0.3s, height 0.3s;
+    border-radius: 3px;
+
+    user-select: none;
+  }
+}

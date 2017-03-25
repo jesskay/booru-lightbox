@@ -1,0 +1,39 @@
+== Legend ==
+ + Added feature
+ - Removed feature
+ ! Bugfix
+ * Notice
+
+== 3.2.3 ==
+ ! Swapped back to scraping Gelbooru because fuck
+ * Swapped to using global listener rather than per event. Should be transparent to the user.
+ * Unsupported files is handled in the Core now.
+
+== 3.2.2 ==
+ ! Swapped back to using Gelbooru API due to Gelbooru being fucky. Seriously the site is designed by
+   a 5 year old, no wonder it runs like shit.
+
+== 3.2.1 ==
+ ! Fixed a scope related bug where Ouroboros sites would always load the last image
+
+== 3.2.0 ===
+ * ES6ify, moved from LESS to SASS. This is a large change, please report bugs!
+ * Major optimizations in processing.
+ + Added the ability to zoom and move the image.
+ + Zoom: Mouse wheel to zoom in out, double click to either fit to window or fully zoom in.
+ + Move: You can pan the image with the left mouse button.
+ ! Gelbooru: now respects blacklist properly
+ - Shimmie, SankakuComplex and Derpibooru support (temporarily) removed due to lack of maintenance.
+
+== 3.1.2 ==
+ * Refactored the build script slightly.
+
+== 3.1.1 ==
+ + Preloading of left/right images.
+ * Minor optimizations
+
+== 3.1.0 ==
+ + Added the ability to go left and right with the arrow keys, for better one-hand browsing. :3c
+ ! Fixed a bug where if you spam clicked an image it would glitch out.
+ * Cleaned up the code, made it more DRY
+ * Left-right functionality is unavaliable on Derpibooru as of the moment.

@@ -1,0 +1,37 @@
+{
+  "name": "booru-lightbox",
+  "version": "3.0.0",
+  "description": "A Lightbox for Booru",
+  "main": "make.js",
+  "dependencies": {
+    "css-loader": "^0.14.4",
+    "grunt": "^0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-less": "^0.6.0",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.1",
+    "gulp-insert": "^0.4.0",
+    "handlebars": "^1.0.12",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.0",
+    "node-sass": "^4.5.1",
+    "optimist": "^0.5.2",
+    "queue-async": "^1.2.1",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tylian/booru-lightbox.git"
+  },
+  "author": "Tylian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tylian/booru-lightbox/issues"
+  },
+  "homepage": "https://github.com/Tylian/booru-lightbox#readme"
+}
