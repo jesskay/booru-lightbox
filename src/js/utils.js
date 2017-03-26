@@ -1,5 +1,4 @@
-Booru = Booru || {};
-Booru.common = {
+Loader.define('utils' {
 	ajaxText(url, callback) {
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET", "//" + unsafeWindow.location.host + url, true);
@@ -29,4 +28,4 @@ Booru.common = {
     var result = regex.exec(input);
     return (result === null || index >= result.length) ? false : result[index];
 	}
-};
+});

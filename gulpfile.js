@@ -5,10 +5,12 @@ const concat = require("gulp-concat")
 const sass = require("gulp-sass");
 const clean = require("gulp-clean");
 const fs = require("fs");
-const merge = require("merge-stream");
+const merge2 = require("merge2");
 const pkg = require('./package.json');
 
 const transforms = require('./lib/transforms');
+
+
 
 gulp.task('build:meta', function() {
   return gulp.src("meta/**/*.json")
@@ -19,19 +21,21 @@ gulp.task('build:meta', function() {
 });
 
 gulp.task('build:userscript', ['build:meta'], function() {
-  let sources = gulp.src(["src/index.js", "src/*.js", "src/sites/**/*.js"]);
+  let sources = gulp.src(["src/module.js", "src/js/**/*.js"])
   let settings = gulp.src("src/settings.json")
     .pipe(transforms.trim())
-    .pipe(transforms.wrap("Booru = Booru || {sites: {}};\nBooru.settings = ", ";"));
+    .pipe(transforms.wrap(`Loader.define("settings", `, ");"));
   let styles = gulp.src(["src/style/**/*.scss"])
     .pipe(sass({ "outputStyle": "compressed" }).on("error", sass.logError))
-    .pipe(transforms.jsWrap());
+    .pipe(concat("styles.css"))
+    .pipe(transforms.styleWrap());
 
   let header = fs.readFileSync("build/booru-lightbox.meta.js");
 
-  return merge(sources, settings, styles)
-    .pipe(transforms.fileHeaders())
+  return merge2(sources, settings, styles)
     .pipe(transforms.trim())
+    .pipe(transforms.wrap("(function(root){\n","\n})(this);"))
+    .pipe(transforms.fileHeaders())
     .pipe(concat("booru-lightbox.user.js", { "newLine": "\n\n" }))
     .pipe(template({ pkg: pkg }, { interpolate: /<%=([\s\S]+?)%>/g }))
     .pipe(transforms.wrap(`${header}\n`, "\n\nBooru.run();"))

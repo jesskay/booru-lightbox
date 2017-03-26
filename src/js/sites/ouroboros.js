@@ -1,3 +1,4 @@
+Booru = Booru || {sites: {}};
 Booru.sites.ouroboros = {
 	"name": "Ouroboros",
   "domains": ["e621.net", "e926.net"],

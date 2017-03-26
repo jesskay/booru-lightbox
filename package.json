@@ -10,6 +10,7 @@
     "gulp-concat": "^2.4.1",
     "gulp-sass": "^3.1.0",
     "merge-stream": "^1.0.1",
+    "merge2": "^1.0.3",
     "node-sass": "^4.5.1",
     "optimist": "^0.5.2",
     "queue-async": "^1.2.1",
