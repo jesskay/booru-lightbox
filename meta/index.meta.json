@@ -1,0 +1,9 @@
+{
+	"name": "Booru Lightbox",
+  "namespace": "http://tylian.net/",
+  "version": "<%= pkg.version %>",
+  "description": "<%= pkg.description %>",
+  "updateURL": "http://tylian.net/lightbox/booru-lightbox.meta.js",
+  "downloadURL":  "http://tylian.net/lightbox/booru-lightbox.user.js",
+  "copyright": "2013+, Tylian"
+}

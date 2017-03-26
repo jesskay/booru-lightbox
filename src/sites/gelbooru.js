@@ -1,10 +1,8 @@
+Booru = Booru || {sites: {}};
 Booru.sites.gelbooru = {
 	"name": "Gelbooru",
-	"domains": ["gelbooru.com", "rule34.xxx"],
-	"https": false,
+  "domains": ["gelbooru.com", "rule34.xxx"],
 	"useAPI": false,
-
-  "unsupported": ["swf", "webm"],
 
 	init() {
     document.addEventListener("click", e => {
@@ -19,8 +17,10 @@ Booru.sites.gelbooru = {
     }, true);
 	},
 	fetchImageURL(id, callback) {
-    //return this.apiFetchImageUrl(id, callback);
-		return this.scrapeImageUrl(id, callback);
+    //return ;
+		return this.useAPI
+      ? this.apiFetchImageUrl(id, callback)
+      : this.scrapeImageUrl(id, callback);
 	},
   scrapeImageUrl(id, callback) {
     Booru.common.ajaxText(`/index.php?page=post&s=view&id=${id}`, (err, text) => {

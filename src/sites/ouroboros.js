@@ -1,9 +1,6 @@
 Booru.sites.ouroboros = {
 	"name": "Ouroboros",
-	"domains": ["e621.net", "e926.net"],
-	"https": true,
-
-  "unsupported": ["swf", "webm"],
+  "domains": ["e621.net", "e926.net"],
 
 	init() {
     document.addEventListener("click", e => {

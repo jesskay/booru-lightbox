@@ -1,5 +1,4 @@
-var Booru = {
-	"version": "3.2.4",
+var Booru = Object.assign(Booru || {}, {
 	"sites": {},
 	"site": null,
 	"styles": {},
@@ -7,19 +6,16 @@ var Booru = {
 	"preloadCache": [],
 	"currentId": "",
 
-  "unsupportedUrl": "http://tylian.net/lightbox/unsupported.png",
-
 	run() {
-		Booru.log("Starting up version:", Booru.version);
+		Booru.log("Starting up version:", Booru.settings.version);
 		Booru.lightbox.init();
 		Booru.initEvents();
-		for(var site in Booru.sites) {
+		for(let site in Booru.sites) {
 			if(Booru.sites[site].domains.indexOf(unsafeWindow.location.host) > -1) {
 				Booru.log("Detected:", Booru.sites[site].name);
 				Booru.site = Booru.sites[site];
 				Booru.currentSite = site;
-				Booru.site.init();
-				return true;
+				return Booru.site.init();
 			}
 		}
 	},
@@ -49,7 +45,7 @@ var Booru = {
 			Booru.site.fetchImageURL(id, url => {
         let extension = url.slice(url.lastIndexOf(".") + 1);
         if(!Booru.lightbox.supports(extension)) {
-          url = Booru.unsupportedUrl;
+          url = Booru.settings.unsupportedUrl;
         }
 
 				Booru.urlCache[id] = url;
@@ -106,4 +102,4 @@ var Booru = {
 			GM_log(args.join(" "));
 		}
 	}
-};
+});

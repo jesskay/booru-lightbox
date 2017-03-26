@@ -1,0 +1,8 @@
+{
+  "match": [
+    "http://e621.net/*",
+    "https://e621.net/*",
+    "http://e926.net/*",
+    "https://e926.net/*"
+  ]
+}

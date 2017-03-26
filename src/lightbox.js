@@ -1,3 +1,4 @@
+Booru = Booru || {sites: {}};
 Booru.lightbox = {
 	"locked": false,
 	"visible": false,
@@ -9,7 +10,7 @@ Booru.lightbox = {
   "dragging": false,
   "fullsize": false,
 
-  "supported": ["jpg", "png", "gif"],
+  "supported": ["jpg", "png", "gif", "jpeg"],
 
 	init() {
 		Booru.initCSS("lightbox");

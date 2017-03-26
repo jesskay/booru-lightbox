@@ -1,4 +1,6 @@
 {
 	"debug": true,
-	"pollInterval": 100
+	"pollInterval": 100,
+  "unsupportedUrl": "http://tylian.net/lightbox/unsupported.png",
+  "version": "<%= pkg.version %>"
 }
