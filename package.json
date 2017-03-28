@@ -1,18 +1,16 @@
 {
   "name": "booru-lightbox",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Previews images in a lightbox by clicking upon them.",
   "main": "make.js",
   "dependencies": {
-    "css-loader": "^0.14.4",
     "gulp": "^3.8.10",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.4.1",
+    "gulp-merge-json": "^1.0.0",
     "gulp-sass": "^3.1.0",
-    "merge-stream": "^1.0.1",
-    "node-sass": "^4.5.1",
-    "optimist": "^0.5.2",
-    "queue-async": "^1.2.1",
+    "gulp-template": "^4.0.0",
+    "merge2": "^1.0.3",
     "userscript-meta": "^1.0.1"
   },
   "devDependencies": {},

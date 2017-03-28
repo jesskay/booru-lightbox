@@ -1,4 +1,3 @@
-Booru = Booru || {sites: {}};
 Booru.lightbox = {
 	"locked": false,
 	"visible": false,

@@ -1,4 +1,3 @@
-Booru = Booru || {};
 Booru.common = {
 	ajaxText(url, callback) {
 		var xmlhttp = new XMLHttpRequest();

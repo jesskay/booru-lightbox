@@ -1,4 +1,3 @@
-Booru = Booru || {sites: {}};
 Booru.sites.gelbooru = {
 	"name": "Gelbooru",
   "domains": ["gelbooru.com", "rule34.xxx"],

@@ -1,4 +1,4 @@
-var Booru = Object.assign(Booru || {}, {
+var Booru = {
 	"sites": {},
 	"site": null,
 	"styles": {},
@@ -102,4 +102,4 @@ var Booru = Object.assign(Booru || {}, {
 			GM_log(args.join(" "));
 		}
 	}
-});
+};

@@ -5,7 +5,7 @@ const concat = require("gulp-concat")
 const sass = require("gulp-sass");
 const clean = require("gulp-clean");
 const fs = require("fs");
-const merge = require("merge-stream");
+const merge = require("merge2");
 const pkg = require('./package.json');
 
 const transforms = require('./lib/transforms');
