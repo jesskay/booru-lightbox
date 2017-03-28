@@ -10,6 +10,7 @@
     "gulp-merge-json": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-template": "^4.0.0",
+    "gulp-transform": "^1.1.0",
     "merge2": "^1.0.3",
     "userscript-meta": "^1.0.1"
   },
