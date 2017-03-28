@@ -1,8 +1,8 @@
 Booru.sites.ouroboros = {
-	"name": "Ouroboros",
+  "name": "Ouroboros",
   "domains": ["e621.net", "e926.net"],
 
-	init() {
+  init() {
     document.addEventListener("click", e => {
       if(e.ctrlKey || e.shiftKey || e.button != 0) return true;
       if(e.target.matches(".thumb:not(.blacklisted) > a > img")) {
@@ -13,28 +13,28 @@ Booru.sites.ouroboros = {
       }
       return true;
     }, true);
-	},
-	fetchImageURL(id, callback) {
-		Booru.common.ajaxJSON("/post/show.json?id=" + id, (err, data) => {
-			callback(data["file_url"]);
-		});
-	},
-	getNextId(id, callback) {
+  },
+  fetchImageURL(id, callback) {
+    Booru.common.ajaxJSON("/post/show.json?id=" + id, (err, data) => {
+      callback(data["file_url"]);
+    });
+  },
+  getNextId(id, callback) {
     let target = document.querySelector(`.thumb[id$='${id}']`);
-		let nodes = Array.from(document.querySelectorAll(`.thumb:not(.blacklisted)`));
-	  let next = nodes.indexOf(target);
+    let nodes = Array.from(document.querySelectorAll(`.thumb:not(.blacklisted)`));
+    let next = nodes.indexOf(target);
 
     if(next < 0 || next >= nodes.length - 1)
       return null;
-		callback(nodes[next + 1].id.replace(/\D/g, ""));
-	},
-	getPreviousId(id, callback) {
+    callback(nodes[next + 1].id.replace(/\D/g, ""));
+  },
+  getPreviousId(id, callback) {
     let target = document.querySelector(`.thumb[id$='${id}']`);
-		let nodes = Array.from(document.querySelectorAll(`.thumb:not(.blacklisted)`));
-	  let previous = nodes.indexOf(target);
+    let nodes = Array.from(document.querySelectorAll(`.thumb:not(.blacklisted)`));
+    let previous = nodes.indexOf(target);
 
     if(previous < 1 || previous >= nodes.length)
       return null;
-		callback(nodes[previous - 1].id.replace(/\D/g, ""));
-	}
+    callback(nodes[previous - 1].id.replace(/\D/g, ""));
+  }
 };
