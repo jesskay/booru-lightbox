@@ -22,7 +22,7 @@ gulp.task('build:userscript', ['build:meta'], function() {
   let sources = gulp.src(["src/index.js", "src/*.js", "src/sites/**/*.js"]);
   let settings = gulp.src("src/settings.json")
     .pipe(transforms.trim())
-    .pipe(transforms.wrap("Booru = Booru || {sites: {}};\nBooru.settings = ", ";"));
+    .pipe(transforms.wrap("Booru.settings = ", ";"));
   let styles = gulp.src(["src/style/**/*.scss"])
     .pipe(sass({ "outputStyle": "compressed" }).on("error", sass.logError))
     .pipe(transforms.jsWrap());
